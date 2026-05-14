@@ -18,6 +18,10 @@ Newest entries on top. Format:
 
 ---
 
+## 2026-05-14 — Recent updates + Activity log: cap to 2, expand to see history
+
+- Both sections now show the 2 most recent entries by default with a "View N older" toggle that reveals the rest inside a max-height scrollable container. Keeps the page short and partners focused on what changed this week without losing the historical log.
+
 ## 2026-05-14 — Website + dashboard aligned to House Standard v1.0
 
 - Applied the OBLQAI Brand Identity (House Standard v1.0) across both surfaces. The three hard locks are now codified everywhere: one accent (orange `#FF8449`), two type families (Inter + Georgia), no AI tropes.

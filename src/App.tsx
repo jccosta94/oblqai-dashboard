@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   HashRouter,
   Link,
@@ -293,36 +294,86 @@ function Costs({ costs }: { costs: Cost[] }) {
   );
 }
 
+function UpdateCard({ u }: { u: Update }) {
+  return (
+    <article className="rounded-lg border border-[#D8CFC0] bg-white p-5">
+      <div className="mb-2 flex items-baseline justify-between gap-3">
+        <h3 className="font-serif text-lg leading-tight">{u.headline}</h3>
+        <span className="whitespace-nowrap text-xs uppercase tracking-wide text-[var(--color-copper)]">
+          {fmtDate(u.date)}
+        </span>
+      </div>
+      <ul className="list-disc space-y-1 pl-5 text-sm text-[var(--color-charcoal)]">
+        {u.body.map((line, j) => (
+          <li key={j}>{line}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
 function Updates({ updates }: { updates: Update[] }) {
+  const [expanded, setExpanded] = useState(false);
   if (!updates || updates.length === 0) return null;
+  const recent = updates.slice(0, 2);
+  const rest = updates.slice(2);
   return (
     <section className="mb-12">
       <SectionHeader
         eyebrow="What's new"
         title="Recent updates"
-        subtitle={`${updates.length} ${updates.length === 1 ? 'entry' : 'entries'} · most recent first`}
+        subtitle={`Showing the ${recent.length} most recent of ${updates.length} ${updates.length === 1 ? 'entry' : 'entries'} · newest first`}
       />
       <div className="space-y-4">
-        {updates.map((u, i) => (
-          <article
-            key={`${u.date}-${i}`}
-            className="rounded-lg border border-[#D8CFC0] bg-white p-5"
-          >
-            <div className="mb-2 flex items-baseline justify-between gap-3">
-              <h3 className="font-serif text-lg leading-tight">{u.headline}</h3>
-              <span className="whitespace-nowrap text-xs uppercase tracking-wide text-[var(--color-copper)]">
-                {fmtDate(u.date)}
-              </span>
-            </div>
-            <ul className="list-disc space-y-1 pl-5 text-sm text-[var(--color-charcoal)]">
-              {u.body.map((line, j) => (
-                <li key={j}>{line}</li>
-              ))}
-            </ul>
-          </article>
+        {recent.map((u, i) => (
+          <UpdateCard key={`${u.date}-${i}`} u={u} />
         ))}
       </div>
+      {rest.length > 0 && (
+        <div className="mt-4">
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-xs font-semibold uppercase tracking-widest text-[var(--color-copper)] hover:opacity-80"
+          >
+            {expanded ? `↑ Hide older updates` : `↓ View ${rest.length} older update${rest.length === 1 ? '' : 's'}`}
+          </button>
+          {expanded && (
+            <div className="mt-3 max-h-96 space-y-3 overflow-y-auto rounded-lg border border-dashed border-[#D8CFC0] bg-[#FBF7EE] p-3 [scrollbar-width:thin]">
+              {rest.map((u, i) => (
+                <UpdateCard key={`older-${u.date}-${i}`} u={u} />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </section>
+  );
+}
+
+function ActivityRow({
+  a,
+  byId,
+}: {
+  a: Activity;
+  byId: Map<string, string>;
+}) {
+  return (
+    <li className="rounded-lg border border-[#D8CFC0] bg-white p-3 text-sm">
+      <div className="flex items-baseline justify-between gap-2">
+        <div className="font-semibold">{a.activity}</div>
+        <div className="text-xs text-[var(--color-muted)]">{fmtDate(a.date)}</div>
+      </div>
+      <div className="mt-1 text-xs text-[var(--color-muted)]">
+        {(a.customerIds ?? []).map((id) => byId.get(id) ?? id).join(', ')}{' '}
+        {a.type && `· ${a.type}`} {a.status && `· ${a.status}`}
+      </div>
+      {a.details && (
+        <div className="mt-2 text-sm text-[var(--color-charcoal)]">
+          {a.details}
+        </div>
+      )}
+    </li>
   );
 }
 
@@ -333,6 +384,7 @@ function Activities({
   activities: Activity[];
   customers: Customer[];
 }) {
+  const [expanded, setExpanded] = useState(false);
   if (activities.length === 0) {
     return (
       <section className="mb-12">
@@ -352,39 +404,38 @@ function Activities({
   const sorted = [...activities].sort((a, b) =>
     (b.date ?? '').localeCompare(a.date ?? '')
   );
+  const recent = sorted.slice(0, 2);
+  const rest = sorted.slice(2);
   return (
     <section className="mb-12">
       <SectionHeader
         eyebrow="Recent activity"
         title="Activity log"
-        subtitle={`${activities.length} activities`}
+        subtitle={`Showing the ${recent.length} most recent of ${activities.length} ${activities.length === 1 ? 'activity' : 'activities'}`}
       />
       <ul className="space-y-2">
-        {sorted.slice(0, 15).map((a) => (
-          <li
-            key={a.id}
-            className="rounded-lg border border-[#D8CFC0] bg-white p-3 text-sm"
-          >
-            <div className="flex items-baseline justify-between gap-2">
-              <div className="font-semibold">{a.activity}</div>
-              <div className="text-xs text-[var(--color-muted)]">
-                {fmtDate(a.date)}
-              </div>
-            </div>
-            <div className="mt-1 text-xs text-[var(--color-muted)]">
-              {(a.customerIds ?? [])
-                .map((id) => byId.get(id) ?? id)
-                .join(', ')}{' '}
-              {a.type && `· ${a.type}`} {a.status && `· ${a.status}`}
-            </div>
-            {a.details && (
-              <div className="mt-2 text-sm text-[var(--color-charcoal)]">
-                {a.details}
-              </div>
-            )}
-          </li>
+        {recent.map((a) => (
+          <ActivityRow key={a.id} a={a} byId={byId} />
         ))}
       </ul>
+      {rest.length > 0 && (
+        <div className="mt-4">
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-xs font-semibold uppercase tracking-widest text-[var(--color-copper)] hover:opacity-80"
+          >
+            {expanded ? `↑ Hide older activity` : `↓ View ${rest.length} older ${rest.length === 1 ? 'entry' : 'entries'}`}
+          </button>
+          {expanded && (
+            <ul className="mt-3 max-h-96 space-y-2 overflow-y-auto rounded-lg border border-dashed border-[#D8CFC0] bg-[#FBF7EE] p-3 [scrollbar-width:thin]">
+              {rest.map((a) => (
+                <ActivityRow key={`older-${a.id}`} a={a} byId={byId} />
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </section>
   );
 }
