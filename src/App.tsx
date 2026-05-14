@@ -541,9 +541,25 @@ function PageShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       {children}
-      <footer className="mt-16 flex flex-col items-center gap-3 border-t border-[#D8CFC0] pt-6 text-center text-xs text-[var(--color-muted)]">
-        <img src={LOGO_SRC} alt="OBLQAI" className="h-6 w-auto opacity-60" />
-        <div>Internal partner view · Snapshot generated {fmtDate(generatedAt)}</div>
+      {/* Footer carries the typeset wordmark per the House Standard placement rule
+          (header carries the mark, footer carries the typeset wordmark — never both). */}
+      <footer className="mt-16 border-t border-[var(--color-gray-01)] pt-6">
+        <div className="flex flex-col items-start justify-between gap-3 text-xs uppercase tracking-[0.18em] text-[var(--color-muted)] md:flex-row md:items-center">
+          <div
+            className="font-sans text-lg font-bold leading-none text-[var(--color-ink)] normal-case tracking-[-0.01em]"
+          >
+            OBLQ
+            <span className="text-[var(--color-accent)]">·</span>
+            AI
+          </div>
+          <div>Internal partner view · Snapshot generated {fmtDate(generatedAt)}</div>
+          <a
+            href="https://oblqai.com"
+            className="text-[var(--color-accent)] hover:opacity-80"
+          >
+            oblqai.com
+          </a>
+        </div>
       </footer>
     </div>
   );

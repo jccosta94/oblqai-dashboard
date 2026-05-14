@@ -3,20 +3,34 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Georgia", ui-serif, serif;
+  --font-serif: Georgia, "Times New Roman", serif;
 
-  /* OBLQAI palette — matches the website + logo wordmark.
-     Black "oblq" + orange "Ai". Cream paper background. */
-  --color-ink: #000000;            /* logo black */
-  --color-ink-soft: #1A1A1A;       /* near-black for hover/secondary */
-  --color-copper: #FF8449;         /* logo orange (accent) — formerly copper */
-  --color-copper-soft: #FFAE85;    /* tinted orange */
-  --color-cream: #F7F1E8;          /* paper */
-  --color-cream-deep: #EBDFCC;     /* sand */
-  --color-charcoal: #1F1F1F;       /* secondary dark text */
-  --color-muted: #666666;          /* muted text */
-  --color-faint: #888888;
-  --color-divider: #CCCCCC;
+  /* OBLQAI House Standard v1.0
+     Three hard locks: one accent (#FF8449), two families (Inter + Georgia),
+     no AI tropes. See /Brand/OBLQAI — Brand Identity, House Standard v1.pdf. */
+
+  /* Four primaries */
+  --color-ink: #000000;            /* Ink Black — mark + headlines */
+  --color-ink-soft: #1A1A1A;       /* Body ink — one notch off pure black */
+  --color-copper: #FF8449;         /* OBLQ Orange — the one accent (legacy name kept for backwards compat) */
+  --color-accent: #FF8449;         /* Canonical accent name */
+  --color-copper-soft: #FFAE85;    /* Tinted orange for hover */
+  --color-cream: #F7F1E8;          /* Cream — default ground */
+  --color-cream-deep: #EBDFCC;     /* Warm Sand — editorial shifts */
+
+  /* Gray ramp — for tiers, never for mood */
+  --color-gray-01: #CCCCCC;
+  --color-gray-02: #AAAAAA;
+  --color-gray-03: #888888;
+  --color-gray-04: #666666;
+  --color-gray-05: #4A4A4A;
+  --color-gray-06: #2D2D2D;
+
+  /* Legacy aliases for backwards compatibility with existing components */
+  --color-charcoal: #2D2D2D;       /* maps to gray-06 */
+  --color-muted: #666666;          /* maps to gray-04 */
+  --color-faint: #888888;          /* maps to gray-03 */
+  --color-divider: #CCCCCC;        /* maps to gray-01 */
 }
 
 html, body, #root {

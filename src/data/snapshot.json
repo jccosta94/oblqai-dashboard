@@ -95,6 +95,16 @@
   "updates": [
     {
       "date": "2026-05-14",
+      "headline": "Website + dashboard aligned to House Standard v1.0",
+      "body": [
+        "Applied the OBLQAI Brand Identity (House Standard v1.0) across both surfaces. The three hard locks are now codified everywhere: one accent (orange #FF8449), two type families (Inter + Georgia), no AI tropes.",
+        "Website (oblqai.com): hero rewritten with Georgia Bold display headline + italic orange accent, cream ground replaces the old cool gradient, sand-paper case-study card replaces the cyan blob. Header on cream-tinted blur. Footer is now ink-ground with the typeset OBLQ·AI wordmark.",
+        "Dashboard: footer now carries the typeset OBLQ·AI wordmark per the placement rule (header carries the mark, footer carries the typeset wordmark — never both). Added the full gray-ramp tokens.",
+        "Promoted section headlines on the website to Georgia across Services, Pricing, Calculator, Methodology, Differentiators, Contact, BlogSection, and DiscoveryCTA."
+      ]
+    },
+    {
+      "date": "2026-05-14",
       "headline": "Dashboard branding now matches the OBLQAI logo",
       "body": [
         "Replaced the text wordmark in the header with the actual OBLQAI logo image (black 'oblq' + orange 'Ai'). Also appears small in the footer.",
