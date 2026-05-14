@@ -37,22 +37,24 @@ function fmtDate(s?: string) {
   });
 }
 
+// One column per planned stage, in canonical order, even when empty —
+// so partners can see how the pipeline is structured end-to-end.
 function groupByStage(customers: Customer[]) {
-  const groups = new Map<string, Customer[]>();
+  const groups = new Map<string, Customer[]>(
+    STAGE_ORDER.map((s) => [s, []])
+  );
+  const extras: [string, Customer[]][] = [];
   for (const c of customers) {
     const k = c.stage ?? 'Unassigned';
-    if (!groups.has(k)) groups.set(k, []);
-    groups.get(k)!.push(c);
+    if (groups.has(k)) {
+      groups.get(k)!.push(c);
+    } else {
+      const found = extras.find(([n]) => n === k);
+      if (found) found[1].push(c);
+      else extras.push([k, [c]]);
+    }
   }
-  // sort stages by canonical order, push unknowns to the end
-  return [...groups.entries()].sort(([a], [b]) => {
-    const ai = STAGE_ORDER.indexOf(a);
-    const bi = STAGE_ORDER.indexOf(b);
-    if (ai === -1 && bi === -1) return a.localeCompare(b);
-    if (ai === -1) return 1;
-    if (bi === -1) return -1;
-    return ai - bi;
-  });
+  return [...groups.entries(), ...extras];
 }
 
 function sumCosts(costs: Cost[]) {
@@ -118,31 +120,70 @@ function CustomerCard({ c }: { c: Customer }) {
 
 function Pipeline({ customers }: { customers: Customer[] }) {
   const groups = groupByStage(customers);
+  const populatedCount = groups.filter(([, items]) => items.length > 0).length;
   return (
     <section className="mb-12">
       <SectionHeader
         eyebrow="Pipeline"
         title="Customers by stage"
-        subtitle={`${customers.length} customers across ${groups.length} stages`}
+        subtitle={`${customers.length} customers · ${populatedCount} of ${groups.length} stages active. Pipeline flows left to right: Lead → Live (the last two are terminal outcomes).`}
       />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {groups.map(([stage, items]) => (
-          <div key={stage} className="rounded-lg bg-[#EFE7D7] p-3">
-            <div className="mb-3 flex items-baseline justify-between border-b border-[#D8CFC0] pb-2">
-              <h4 className="font-serif text-sm font-bold uppercase tracking-wider">
-                {stage}
-              </h4>
-              <span className="text-xs text-[var(--color-muted)]">
-                {items.length}
-              </span>
-            </div>
-            <div className="space-y-3">
-              {items.map((c) => (
-                <CustomerCard key={c.id} c={c} />
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="-mx-2 overflow-x-auto pb-3 [scrollbar-width:thin]">
+        <div className="flex min-w-max gap-4 px-2">
+          {groups.map(([stage, items]) => {
+            const empty = items.length === 0;
+            return (
+              <div
+                key={stage}
+                className={
+                  'w-64 shrink-0 rounded-lg p-3 ' +
+                  (empty
+                    ? 'border border-dashed border-[#D8CFC0] bg-transparent'
+                    : 'bg-[#EFE7D7]')
+                }
+              >
+                <div
+                  className={
+                    'mb-3 flex items-baseline justify-between border-b pb-2 ' +
+                    (empty
+                      ? 'border-[#E0D6C5]'
+                      : 'border-[#D8CFC0]')
+                  }
+                >
+                  <h4
+                    className={
+                      'font-serif text-sm font-bold uppercase tracking-wider ' +
+                      (empty ? 'text-[var(--color-faint)]' : '')
+                    }
+                  >
+                    {stage}
+                  </h4>
+                  <span
+                    className={
+                      'text-xs ' +
+                      (empty
+                        ? 'text-[var(--color-faint)]'
+                        : 'text-[var(--color-muted)]')
+                    }
+                  >
+                    {items.length}
+                  </span>
+                </div>
+                {empty ? (
+                  <p className="text-xs italic text-[var(--color-faint)]">
+                    No customers in this stage yet
+                  </p>
+                ) : (
+                  <div className="space-y-3">
+                    {items.map((c) => (
+                      <CustomerCard key={c.id} c={c} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

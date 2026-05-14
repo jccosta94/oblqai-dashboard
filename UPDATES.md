@@ -18,6 +18,11 @@ Newest entries on top. Format:
 
 ---
 
+## 2026-05-14 — Full pipeline now visible on the dashboard
+
+- The "Customers by stage" section now shows ALL 11 planned stages as columns (Lead, Qualified, Discovery, Audit, Proposal, Negotiation, Won, Onboarding, Live, Churned, Lost), not just the ones with active customers. Empty stages render as dashed placeholders so partners can see how the pipeline is structured end-to-end.
+- Layout switched to a horizontal scroll so the full flow stays in one row at any screen width.
+
 ## 2026-05-14 — Dashboard goes live; partner change log begins
 
 - Launched the partner operations dashboard at `jccosta94.github.io/oblqai-dashboard`.
