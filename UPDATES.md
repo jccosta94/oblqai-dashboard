@@ -18,6 +18,13 @@ Newest entries on top. Format:
 
 ---
 
+## 2026-05-15 — Website refresh shipped — new Use Cases page + blog repositioned
+
+- New **/use-cases** page is live on oblqai.com — an interactive Before/After slider paired with a 5-industry tile picker (Legal, E-Commerce, Marketing, Healthcare, Software). Each scenario is anchored to a concrete operational outcome the system delivers: **€2.4M risk surfaced** on a 247-contract M&A diligence, **€340k/mo margin** from pricing intelligence across the catalog, a **complete multi-channel launch kit** in 4 hours vs. a 6-week agency cycle, **€58,200 recovered** from a denied-claims backlog, **support backlog cut 71%** with first-response time down from 14h to 4m.
+- Blog rewritten and repositioned. The prior set of fictional client case studies has been removed — composites that read as real are a credibility risk for the brand. Replaced with three new posts spanning three angles: SEO authority (GDPR-compliant AI for clinics in CH/DE/PT), founder POV (why we don't sell autonomous AI to law firms — bylined Joao), and operational walkthrough (what Practice Command actually replaces in a clinic by week 1, 4, 12). Seven more posts queued in the editorial slate.
+- Header navigation now exposes **Use Cases** as a top-level link alongside Services, Process, ROI Calculator, and Blog.
+- House standard preserved end-to-end: cream-on-cream layout with a single dark CTA band at the bottom (sandwich rule), Georgia editorial headers, copper as the sole accent.
+
 ## 2026-05-14 — Practice Command monthly halved (multiplier re-tune, two passes)
 
 - Internal pricing stack re-tuned in two passes today. **Pass 1:** Intelligence / Compliance / Integrations dropped from **10x → 5x** each. **Pass 2:** Compute dropped from **5x → 2x** and Messaging from **3x → 2x**. Total stack moves from **38x → 19x** — exactly half.
