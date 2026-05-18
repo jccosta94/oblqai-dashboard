@@ -18,6 +18,16 @@ Newest entries on top. Format:
 
 ---
 
+## 2026-05-18 — Weekly recap: no material changes to CRM or costs
+
+- Pipeline holds steady since 2026-05-16: Sergio (Proposal), Sara / Renato / Zé Maria (Discovery), Miranda (Lead). Five active records — no new leads, no stage moves, no MRR or setup-fee changes, no package/tier/market changes.
+- No new or changed cost lines. Monthly burn unchanged at **€315.90/mo** (Anthropic Claude Pro Max €221.40 still dominant; Codex €25, Google AI €22, Hostinger VPS €20.50, Upload-Post €15, Google Workspace €12; Firebase, GitHub, Cowork, n8n at €0).
+- Tasks board: 4 In progress, 4 Todo, 2 Done. Brand Standard v1.0 §01-§03 approval (Jo) slipped past its 2026-05-16 due date over the weekend and is now overdue. Three tasks land their due date today (2026-05-18): chatbot tuning (Jo), Drive doc upload (Jo), social content strategy (Miguel).
+- Two pilots still gated on prospect availability: Renato (first OpenClaw pilot) and Zé Maria (rescheduling the missed initial call). Sergio's proposal response is the other open thread — follow-up due 2026-05-19.
+- Nothing to escalate this week — system checked, state is intentionally unchanged.
+
+---
+
 ## 2026-05-16 — Site repositioned as Claude Cowork implementation partner
 
 - Homepage rewritten end-to-end to lead with **Claude Cowork**, not generic "AI automation". New hero: *"Claude Cowork, implemented for European SMBs."* Eyebrow, subhead, footer tagline, methodology and differentiators all updated to lead on the implementation-partner role rather than the prior "integration layer / productized AI operating layer" framing.

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-16T08:10:00.000Z",
+  "generatedAt": "2026-05-18T09:00:00.000Z",
   "customers": [
     {
       "id": "rect4kxOi5Xzv7eSK",
@@ -93,6 +93,17 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-05-18",
+      "headline": "Weekly recap: no material changes to CRM or costs",
+      "body": [
+        "Pipeline holds steady since 2026-05-16: Sergio (Proposal), Sara / Renato / Zé Maria (Discovery), Miranda (Lead). Five active records — no new leads, no stage moves, no MRR or setup-fee changes, no package/tier/market changes.",
+        "No new or changed cost lines. Monthly burn unchanged at €315.90/mo (Anthropic Claude Pro Max €221.40 still dominant; Codex €25, Google AI €22, Hostinger VPS €20.50, Upload-Post €15, Google Workspace €12; Firebase, GitHub, Cowork, n8n at €0).",
+        "Tasks board: 4 In progress, 4 Todo, 2 Done. Brand Standard v1.0 §01-§03 approval (Jo) slipped past its 2026-05-16 due date over the weekend and is now overdue. Three tasks land their due date today (2026-05-18): chatbot tuning (Jo), Drive doc upload (Jo), social content strategy (Miguel).",
+        "Two pilots still gated on prospect availability: Renato (first OpenClaw pilot) and Zé Maria (rescheduling the missed initial call). Sergio's proposal response is the other open thread — follow-up due 2026-05-19.",
+        "Nothing to escalate this week — system checked, state is intentionally unchanged."
+      ]
+    },
     {
       "date": "2026-05-16",
       "headline": "Site repositioned as Claude Cowork implementation partner",
