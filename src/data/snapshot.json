@@ -118,6 +118,27 @@
           "type": "gdoc",
           "url": "https://docs.google.com/document/d/1XYSSb8eG9067ytgYbVj_wh4HklPdL5g0lh12HrGBMHQ/edit",
           "description": "Tier 1 Cowork roadmap anchored on B2C website + Claude-powered configurator + headless Airtable CRM + email connector. Hugo as Phase 2. No pricing — Joao to set once 2026-06-15 list lands. Includes Internal Notes section to strip before any client send. v1 doc still in Drive as history."
+        },
+        {
+          "title": "Renato Proposal — B2C Pilot (deck)",
+          "filename": "Renato-Proposal.pptx",
+          "type": "pptx",
+          "url": "https://docs.google.com/document/d/1E8v-roLUyQ6V7EqtKbvK3lOTB4z0IwggsfVnQ7DdxN8/edit",
+          "description": "7-slide proposal-mode deck with OBLQAI logo, cover + 4-kits overview + Open Questions across 2 slides + Processes + Future iterations + Next steps. Review cadence stated as weekly with Joao or Tiago Fernandes for first 2 months. Drive doc is searchable content mirror; actual .pptx lives in client-implementations/Renato/."
+        },
+        {
+          "title": "Discovery Call Notes — 2026-05-19 (refreshed)",
+          "filename": "2026-05-19-discovery-call-summary.md",
+          "type": "gdoc",
+          "url": "https://docs.google.com/document/d/1n5bRVNiG8ETZRNrn7FJVV716_iJ-SMEAL-0pXgLqMPA/edit",
+          "description": "Refreshed Drive copy of the discovery call summary. Sections: prospect snapshot, what Renato wants, what was walked through, open questions, diagnostic read, action items, risks."
+        },
+        {
+          "title": "Master Plan Diagram (Renato_Plan.excalidraw)",
+          "filename": "Renato_Plan.excalidraw",
+          "type": "excalidraw",
+          "url": "https://docs.google.com/document/d/1S180kPz_-OWefjY-22ww_-2dXCSmrIHm4NGh9aV4TVM/edit",
+          "description": "Joao's consolidated master plan — single Excalidraw canvas combining the Capabilities Map, Scope Summary, Process Flow 1 (Consumer Acquisition), Process Flow 3 (Inbound Triage), and the Still-in-Motion (Open Questions, Decisions, Processes) panel. 2,364 elements · 2.1 MB. Drive doc is pointer; actual .excalidraw lives in client-implementations/Renato/."
         }
       ]
     },
@@ -190,6 +211,16 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-05-20",
+      "headline": "Renato — proposal deck shipped (with OBLQAI logo + weekly cadence) + master plan + refreshed notes wired to Drive, Airtable, and dashboard",
+      "body": [
+        "Three new artifacts pushed for Renato: (a) the 7-slide proposal-mode deck Renato-Proposal.pptx now carries the OBLQAI wordmark on every slide and drops the 'Internal draft' caption — review cadence stated as weekly with Joao or Tiago Fernandes for the first 2 months (settling to monthly after the pilot); (b) the master plan diagram Joao compiled (Renato_Plan.excalidraw, 2,364 elements, 2.1 MB) combining the Capabilities Map + Scope Summary + Process Flow 1 (Consumer Acquisition) + Process Flow 3 (Inbound Triage) + the Still-in-Motion panel into a single canvas; (c) a refreshed Drive copy of the discovery call notes with cleaner formatting.",
+        "All three are now linked from the Renato CRM card on this dashboard and recorded as Deliverable rows in the OBLQAI Ops Airtable (linked to the Renato customer record).",
+        "Drive limitation noted: the GDrive MCP can't ingest binary uploads larger than ~265KB inline per tool call. The proposal .pptx (1.2MB) and the master plan .excalidraw (2.1MB) stay as canonical files in client-implementations/Renato/; their Drive entries are searchable content mirrors / pointer docs. If clean Drive copies of the binaries matter, Joao can upload them through the Drive UI directly.",
+        "Process Flows 4-7 (E-commerce model · Checkout & Payment · Customer Service Window · Escalation Playbook) are NOT in this round of uploads — flagged earlier for Joao to review before sharing further."
+      ]
+    },
     {
       "date": "2026-05-19",
       "headline": "Sergio + Sara + Zé Maria deliverables uploaded to Drive — every CRM card's deliverable now opens a working Google Doc",

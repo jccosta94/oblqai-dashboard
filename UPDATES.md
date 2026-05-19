@@ -18,6 +18,15 @@ Newest entries on top. Format:
 
 ---
 
+## 2026-05-20 — Renato — proposal deck shipped (with OBLQAI logo + weekly cadence) + master plan + refreshed notes wired to Drive, Airtable, and dashboard
+
+- Three new artifacts pushed for Renato: (a) the 7-slide proposal-mode deck `Renato-Proposal.pptx` now carries the OBLQAI wordmark on every slide and drops the "Internal draft" caption — review cadence stated as weekly with Joao or Tiago Fernandes for the first 2 months (settling to monthly after the pilot); (b) the master plan diagram Joao compiled (`Renato_Plan.excalidraw`, 2,364 elements, 2.1 MB) combining the Capabilities Map + Scope Summary + Process Flow 1 (Consumer Acquisition) + Process Flow 3 (Inbound Triage) + the Still-in-Motion panel into a single canvas; (c) a refreshed Drive copy of the discovery call notes with cleaner formatting.
+- All three are now linked from the Renato CRM card on this dashboard and recorded as Deliverable rows in the OBLQAI Ops Airtable (linked to the Renato customer record).
+- Drive limitation noted: the GDrive MCP can't ingest binary uploads larger than ~265KB inline per tool call. The proposal `.pptx` (1.2 MB) and the master plan `.excalidraw` (2.1 MB) stay as canonical files in `client-implementations/Renato/`; their Drive entries are searchable content mirrors / pointer docs. If clean Drive copies of the binaries matter, Joao can upload them through the Drive UI directly.
+- Process Flows 4–7 (E-commerce model · Checkout & Payment · Customer Service Window · Escalation Playbook) are NOT in this round of uploads — flagged earlier for Joao to review before sharing further.
+
+---
+
 ## 2026-05-19 — Sergio + Sara + Zé Maria deliverables uploaded to Drive — every CRM card's deliverable now opens a working Google Doc
 
 - Created OBLQAI → Clients → Sergio — Alpaca Law, OBLQAI → Clients → Sara — Beauty Clinic, and OBLQAI → Clients → Zé Maria — Agency + Construction in Drive. Uploaded 10 deliverables total: 7 Sergio docs (Meeting Notes, Alpaca research brief, Use-Case recommendations, Next-Steps plan, Alpaca-vs-Cowork plain-language EN + PT, formal proposal), Sara's 16-slide aesthetic-clinic deck, Zé Maria's v0.2 proposal, and the Example Agency reference deck Zé Maria used as a benchmark. Every customer's deliverables array in snapshot.json now has working URLs.
