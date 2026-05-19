@@ -370,7 +370,19 @@
       ]
     }
   ],
-  "activities": [],
+  "activities": [
+    {
+      "id": "act-renato-2026-05-19-discovery",
+      "activity": "Discovery call with Renato (Incotin)",
+      "customerIds": ["recUueACFukgzm3vV"],
+      "date": "2026-05-19",
+      "type": "Discovery call",
+      "status": "Completed",
+      "details": "Walked Renato through the 4 Levels of AI. Established Incotin's B2C ambition (reaching particulares with their paint products, anchored on Spain ~4k-unit-per-season reference) and pinned the concrete entry use case: a B2C section on incotin.com.pt plus a guided paint configurator. Engagement positioned as Tier 1 Claude Cowork Setup with Hugo (OpenClaw marketing autopilot) as a Phase 2 upgrade. Headless Airtable CRM and email connector added to Phase 1 scope in the v2 proposal draft.",
+      "nextStep": "Renato delivers his B2C channels mix + operating-tools list",
+      "nextStepDue": "2026-06-15"
+    }
+  ],
   "costs": [
     {
       "id": "recRwGZ0Pe0yAhCNP",
