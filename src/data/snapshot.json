@@ -506,7 +506,7 @@
     {
       "date": "2026-05-21",
       "headline": "Renato pilot — proposal + use cases sent, awaiting feedback",
-      "bullets": [
+      "body": [
         "Sent the two-deck deliverable to Renato (Incotin): Renato-Proposal.pptx + Renato-Use-Cases.pptx. He reviews, then we schedule an alignment call before his 2026-06-15 channels & tools deliverable.",
         "Renato customer record moved to Proposal stage in OBLQAI Ops. Activity logged: 'Proposal sent — Completed', next step due 2026-06-15.",
         "Mirrored everywhere it needs to be: Airtable Activities + customer record, project memory, and this dashboard."
@@ -515,7 +515,7 @@
     {
       "date": "2026-05-20",
       "headline": "Renato pilot — Use Cases deck shipped alongside proposal",
-      "bullets": [
+      "body": [
         "Renato gets a two-part deliverable for the 2026-06-15 follow-up: (1) Renato-Proposal.pptx — 8 slides, what we propose; (2) Renato-Use-Cases.pptx — 13 slides, how every flow actually runs through Cowork.",
         "Use Cases deck covers 11 process flows: online strategy · CRM strategy · website build · consumer-into-CRM funnel · inbound triage · content engine · visuals + scheduling · Google Ads · GMB · weekly review · escalation. Each one shows the schedule → plugin → draft → approve → publish → log loop.",
         "Both decks copied to dashboard repo (clients/renato/) and Airtable Deliverables. Renato Plan excalidraw (already pushed) remains the integrated canvas view."
@@ -524,7 +524,7 @@
     {
       "date": "2026-05-20",
       "headline": "Project-wide sweep — OpenClaw → Hermes (Nous Research) across artifacts",
-      "bullets": [
+      "body": [
         "Tier 2 / Autopilot runtime narrative updated everywhere: Hermes (Nous Research, hermes-agent.nousresearch.com) replaces OpenClaw. Hugo brand survives as the OBLQAI-curated marketing product running on top of Hermes.",
         "163 replacements across 28 files: CLAUDE.md (both root + .claude), claude-cowork-service-blueprint-v2.docx (33 hits), claude-cowork-README.md (13), Comercial/Demos/Advogado-Contratos-* (33 across 6 files), Context/active-pilots.md + verticals.md, all in-flight Renato deliverables (proposal markdown, .pptx, requirements .xlsx, master plan .excalidraw, discovery call summary, requirements summary), the website blogPosts.ts + translator agent prompt, the Law-Firms vertical checklist, and the snapshot.json deliverable descriptions (the historical updates array is preserved unchanged).",
         "Two manual cleanups after the automated sweep: the 'Key Terminology' Hermes entry in .claude/CLAUDE.md rewrote itself into a self-contradiction (Hermes was both ours and Nous's); rewritten to clarify Hermes is Nous Research's open-source agent used as our Tier 2 runtime. The 'Agent orchestration' tech-stack line was similarly clarified.",
@@ -535,7 +535,7 @@
     {
       "date": "2026-05-20",
       "headline": "Renato — proposal deck v3 — added cost-savings slide (PT-anchored)",
-      "bullets": [
+      "body": [
         "Renato-Proposal.pptx now 8 slides. New slide 3: 'The alternative cost picture — Portugal' — four columns showing what Incotin would spend to stand up the same B2C surface any other way.",
         "Ranges re-anchored from CH/UK-coded benchmarks to PT SMB reality after Joao's first pass: PEOPLE column reframed as 'agency OR junior + freelance' (not a five-person team); BUILDS pared to just the configurator (€4-12k) plus the cheap shortcuts a PT SMB would actually approve; STACK kept as global SaaS list pricing for now.",
         "No OBLQAI price on the slide — explicit footer states it's an alternative-cost reference, not a quote. Pricing stays as a proposal-call conversation.",
@@ -546,7 +546,7 @@
     {
       "date": "2026-05-19",
       "headline": "Renato — per-customer requirements workbook v1 adapted from template",
-      "bullets": [
+      "body": [
         "Copied the canonical 'Claude Coworker Requirements Blueprint' from Discovery Docs/ (template untouched) and pre-filled 16 sheets for Renato/Incotin.",
         "Captured 8 workflows (configurator, B2C inbound triage, content & ads, GMB, strategy plugin, headless CRM, B2C site updates, performance review), 6 Claude role cards, 6 skills, 17 MCP/connector entries, 14 actions+permissions rows, 7 plugin specs (Phase 1 + Hugo Phase 2).",
         "Every unresolved item marked TBD with a target resolution date — most close out when Renato delivers his channels/tools list on 2026-06-15.",
